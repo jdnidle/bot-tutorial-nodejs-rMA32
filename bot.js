@@ -8,11 +8,11 @@ function respond() {
       botRegex = /^\/cool guy/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salty/;botRegexRules = /^\/rules/
       botRegexAd=/^\/advance/;botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i; botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
-      botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/;
+      botRegexSiege = /^\/siege/; botRegexOW = /^\/coaches/;
       botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/;
       botRegexMad = /^\/madbro/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexPats = /^\/patslose/;
       botRegexHarper = /^\/harper/; botRegexGooden = /^\/gooden/; botRegexCheesy = /^\/austin/;
-      botRegexDaf = /^\/dafuq/; botRegexAyy = /^\/ayy/; botRegexFOS = /^\/factoryofsadness/;
+      botRegexDaf = /^\/dafuq/; botRegexFOS = /^\/factoryofsadness/;
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
       siege3 = 'https://i.groupme.com/960x960.png.006e180e05d841c6a2962e844bf1e6fd';
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -78,16 +78,21 @@ function respond() {
     postMessage("https://media.giphy.com/media/oGBw7OaVBei1W/giphy.gif");
     this.res.end();
   }
-  else if(request.text && botRegexDL.test(request.text)) {
+  else if(request.text && botRegexOwners.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://daddyleagues.com/AFL37/players?name=&position=all&team="+request.text.substring(5,8));
     //postMessage("http://daddyleagues.com/AFL37/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   }
-  
-  else if(request.text && botRegexOW.test(request.text)) {
+  else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("www.daddyleagues.com/AFL37/maddenrating/");
+    postMessage("http://daddyleagues.com/AFL37/players?name=&position=all&team="+request.text.substring(5,8));
+    //postMessage("http://daddyleagues.com/AFL37/team/"+request.text.substring(5,8)+"/depthchart");
+    this.res.end();
+  }  
+  else if(request.text && botRegexCoaches.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://daddyleagues.com/AFL37/coaches");
     this.res.end();
   }
   else if(request.text && botRegexSalt.test(request.text)) {
