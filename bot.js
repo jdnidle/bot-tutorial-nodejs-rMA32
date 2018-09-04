@@ -30,7 +30,7 @@ function respond() {
   }
   else if(request.text && botRegexFOS.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://cover32.com/wp-content/uploads/2017/02/USATSI_9848943_164063748_lowres-e1486410969526.jpg");
+    postMessage("https://www.youtube.com/watch?v=tRBDMMVctu8");
     this.res.end();
   }
   else if(request.text && botRegexDrink.test(request.text)) {
