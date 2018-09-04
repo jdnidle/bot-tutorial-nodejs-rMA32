@@ -7,7 +7,7 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/; botRegexSalt = /^\/salty/;botRegexRules = /^\/rules/
       botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
-      botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; 
+      botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexAFL37 = /^\/afl37/; 
       botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/;
       botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/;
       botRegexMad = /^\/madbro/; botRegexPats = /^\/patslose/;
@@ -41,11 +41,6 @@ function respond() {
   else if(request.text && botRegexMad.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://media.giphy.com/media/xTcnSOEKegBnYhGahW/giphy.gif");
-    this.res.end();
-  }
-  else if(request.text && botRegexKys.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://www.wikihow.com/Tie-a-Noose");
     this.res.end();
   }
   else if(request.text && botRegexDaf.test(request.text)) {
@@ -108,9 +103,9 @@ function respond() {
     postMessage("¯\\_(ツ)_/¯");
     this.res.end();
   }
-  else if(request.text && botRegexWk.test(request.text)) {
+  else if(request.text && botRegexAFL37.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://docs.google.com/spreadsheets/d/1kJqQWCq3RKiTrd4f71FFNKr-Y0ppJzjk0fSF0rP6Bto/edit?usp=sharing");
+    postMessage("https://docs.google.com/spreadsheets/d/1eZEMY4qLq_JUPgnuE9YtKMD3hVHwl7EqjxByYDLBf6I/edit?usp=sharing");
     this.res.end();
   }
   else if(request.text && botODB.test(request.text)) {
