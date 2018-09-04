@@ -9,8 +9,8 @@ function respond() {
       botRegexAd=/^\/advance/;botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i; botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/;
-      botRegexBurn = /^\/burn/; botRegexDrink = /^\/drink/;
-      botRegexReid = /^\/reid/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexPats = /^\/patslose/;
+      botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/;
+      botRegexMad = /^\/madbro/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexPats = /^\/patslose/;
       botRegexHarper = /^\/harper/; botRegexGooden = /^\/gooden/; botRegexCheesy = /^\/austin/;
       botRegexDaf = /^\/dafuq/; botRegexAyy = /^\/ayy/; botRegexFOS = /^\/factoryofsadness/;
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
@@ -33,14 +33,14 @@ function respond() {
     postMessage("https://www.youtube.com/watch?v=tRBDMMVctu8");
     this.res.end();
   }
-  else if(request.text && botRegexDrink.test(request.text)) {
+  else if(request.text && botRegexWamb.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://media.giphy.com/media/3o7TKBcK5ywsaeBm4U/giphy.gif");
+    postMessage("https://i.kym-cdn.com/entries/icons/mobile/000/000/894/wahmbulance.jpg");
     this.res.end();
   }
-  else if(request.text && botRegexReid.test(request.text)) {
+  else if(request.text && botRegexMad.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://media.giphy.com/media/g9RplpKZNkT5u/giphy.gif");
+    postMessage("https://media.giphy.com/media/xTcnSOEKegBnYhGahW/giphy.gif");
     this.res.end();
   }
   else if(request.text && botRegexKys.test(request.text)) {
