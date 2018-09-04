@@ -10,7 +10,7 @@ function respond() {
       botRegexP = /^\/PDL/i; botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/;
       botRegexBurn = /^\/burn/; botRegexDrink = /^\/drink/;
-      botRegexReid = /^\/reid/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexPats = /^\/Patslose/;
+      botRegexReid = /^\/reid/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexPats = /^\/patslose/;
       botRegexHarper = /^\/harper/; botRegexGooden = /^\/gooden/; botRegexCheesy = /^\/austin/;
       botRegexDaf = /^\/dafuq/; botRegexAyy = /^\/ayy/;
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
