@@ -5,9 +5,9 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/; botRegexPlayerSearch = /^\/psearch/i;botRegexSalt = /^\/salty/;botRegexRules = /^\/rules/
+      botRegex = /^\/cool guy/; botRegexSalt = /^\/salty/;botRegexRules = /^\/rules/
       botRegexAd=/^\/advance/;botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
-      botRegexP = /^\/PDL/i; botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
+      botRegexPlayers = /^\/players/i; botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/;
       botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/;
       botRegexMad = /^\/madbro/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexPats = /^\/patslose/;
@@ -77,13 +77,6 @@ function respond() {
     this.res.writeHead(200);
     postMessage("https://media.giphy.com/media/oGBw7OaVBei1W/giphy.gif");
     this.res.end();
-  }
-  else if(request.text && botRegexPlayerSearch.test(request.text)) {
-    this.res.writeHead(200);
-    var req = request.text.substring(5,request.text.length);
-    var rep = req.replace(/ /,"+");
-    postMessage("http://daddyleagues.com/AFL37/players?name="+rep+"&position=all&team=all");
-    this.res.end();
   }  
   else if(request.text && botRegexCoaches.test(request.text)) {
     this.res.writeHead(200);
@@ -116,7 +109,7 @@ function respond() {
     postMessage("http://daddyleagues.com/AFL37/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
-  else if(request.text && botRegexP.test(request.text)) {
+  else if(request.text && botRegexPlayers.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
     var rep = req.replace(/ /,"+");
