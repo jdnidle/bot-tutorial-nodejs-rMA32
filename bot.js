@@ -6,12 +6,12 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/; botRegexSalt = /^\/salty/;botRegexRules = /^\/rules/
-      botRegexAd=/^\/advance/;botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
-      botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
+      botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
+      botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; 
       botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/;
       botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/;
-      botRegexMad = /^\/madbro/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexPats = /^\/patslose/;
-      botRegexHarper = /^\/harper/; botRegexGooden = /^\/gooden/; botRegexCheesy = /^\/austin/;
+      botRegexMad = /^\/madbro/; botRegexPats = /^\/patslose/;
+      botRegexCheesy = /^\/austin/;
       botRegexDaf = /^\/dafuq/; botRegexFOS = /^\/factoryofsadness/;
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
       siege3 = 'https://i.groupme.com/960x960.png.006e180e05d841c6a2962e844bf1e6fd';
@@ -48,11 +48,6 @@ function respond() {
     postMessage("http://www.wikihow.com/Tie-a-Noose");
     this.res.end();
   }
-  else if(request.text && botRegexSlam.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://pbs.twimg.com/profile_images/587294731471757313/ZpI5PfKq.jpg");
-    this.res.end();
-  }
   else if(request.text && botRegexDaf.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://i3.kym-cdn.com/photos/images/facebook/000/787/356/d6f.jpg");
@@ -61,16 +56,6 @@ function respond() {
   else if(request.text && botRegexPats.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://cdn.totalfratmove.com/wp-content/uploads/2016/01/60c44b445e4764e2ff9139c438639d8a.jpg");
-    this.res.end();
-  }
-  else if(request.text && botRegexHarper.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://i.imgur.com/qTkLD6V.jpg");
-    this.res.end();
-  }
-  else if(request.text && botRegexGooden.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://scontent.ford1-1.fna.fbcdn.net/v/t1.0-9/15826744_10209145069717099_8029939462810176348_n.jpg?oh=7a85b5c900234acca9a516e4de1f5e36&oe=592150A9");
     this.res.end();
   }
   else if(request.text && botRegexCheesy.test(request.text)) {
@@ -86,11 +71,6 @@ function respond() {
   else if(request.text && botRegexSalt.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://i.kym-cdn.com/photos/images/newsfeed/000/922/014/7e4.jpg");
-    this.res.end();
-  }
-  else if(request.text && botRegexAd.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://www.hackcollege.com/wp-content/uploads/2013/02/kno_advance.jpg");
     this.res.end();
   }
   else if(request.text && botRegexRules.test(request.text)) {
@@ -123,11 +103,6 @@ function respond() {
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
     this.res.end();
   }
-  else if(request.text && botRegexSb.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://www.reddit.com/r/maddenall32");
-    this.res.end();
-  }
   else if(request.text && botRegexSh.test(request.text)) {
     this.res.writeHead(200);
     postMessage("¯\\_(ツ)_/¯");
@@ -146,11 +121,6 @@ function respond() {
   else if(request.text && botDuck.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://i.gifer.com/uTE.gif");
-    this.res.end();
-  }
-  else if(request.text && botRegexCC.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://i.groupme.com/851x1184.jpeg.330228901f684b0cb46cd1cef6953923");
     this.res.end();
   }
   else if(request.text && botRegexCC.test(request.text)) {
