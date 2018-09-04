@@ -25,7 +25,7 @@ function respond() {
   }
   else if(request.text && botRegexBurn.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://imgur.com/OQ4QeVl");
+    postMessage("https://media.giphy.com/media/pQmWjYrz39YAg/giphy.gif");
     this.res.end();
   }
   else if(request.text && botRegexDrink.test(request.text)) {
