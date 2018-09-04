@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
-      botRegexAd=/^\/advance/;botRegexTrades = /^\/trades/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
+      botRegexAd=/^\/advance/;botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i; botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/;
       botRegexBurn = /^\/burn/; botRegexDrink = /^\/drink/;
@@ -110,7 +110,7 @@ function respond() {
     postMessage("https://www.daddyleagues.com/AFL37/forum");
     this.res.end();
   }
-  else if(request.text && botRegexSC.test(request.text)) {
+  else if(request.text && botRegexSCH.test(request.text)) {
     this.res.writeHead(200);
     
     postMessage("http://daddyleagues.com/AFL37/team/"+request.text.substring(5,8)+"/schedule");
