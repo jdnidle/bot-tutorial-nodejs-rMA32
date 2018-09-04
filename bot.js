@@ -76,7 +76,7 @@ function respond() {
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://daddyleagues.com/AFL37/players?name=&position=all&team="+request.text.substring(5,8));
-    //postMessage("http://daddyleagues.com/CandC/team/"+request.text.substring(5,8)+"/depthchart");
+    //postMessage("http://daddyleagues.com/AFL37/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   }
   
