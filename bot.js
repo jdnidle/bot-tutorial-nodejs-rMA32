@@ -8,7 +8,7 @@ function respond() {
       botRegex = /^\/cool guy/; botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salty/;botRegexRules = /^\/rules/
       botRegexAd=/^\/advance/;botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i; botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
-      botRegexSiege = /^\/siege/; botRegexOW = /^\/coaches/;
+      botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/;
       botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/;
       botRegexMad = /^\/madbro/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexPats = /^\/patslose/;
       botRegexHarper = /^\/harper/; botRegexGooden = /^\/gooden/; botRegexCheesy = /^\/austin/;
@@ -76,12 +76,6 @@ function respond() {
   else if(request.text && botRegexCheesy.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://media.giphy.com/media/oGBw7OaVBei1W/giphy.gif");
-    this.res.end();
-  }
-  else if(request.text && botRegexOwners.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/AFL37/players?name=&position=all&team="+request.text.substring(5,8));
-    //postMessage("http://daddyleagues.com/AFL37/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   }
   else if(request.text && botRegexDL.test(request.text)) {
