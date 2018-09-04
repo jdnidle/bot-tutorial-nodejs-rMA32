@@ -10,7 +10,7 @@ function respond() {
       botRegexP = /^\/PDL/i; botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/;
       botRegexBurn = /^\/burn/; botRegexDrink = /^\/drink/;
-      botRegexReid = /^\/reid/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexLyd = /^\/lyd/;
+      botRegexReid = /^\/reid/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexPats = /^\/Patslose/;
       botRegexHarper = /^\/harper/; botRegexGooden = /^\/gooden/; botRegexCheesy = /^\/austin/;
       botRegexDaf = /^\/dafuq/; botRegexAyy = /^\/ayy/;
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
@@ -53,9 +53,9 @@ function respond() {
     postMessage("http://i3.kym-cdn.com/photos/images/facebook/000/787/356/d6f.jpg");
     this.res.end();
   }
-  else if(request.text && botRegexLyd.test(request.text)) {
+  else if(request.text && botRegexPats.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://media2.giphy.com/media/pUeXcg80cO8I8/200.gif#4");
+    postMessage("https://cdn.totalfratmove.com/wp-content/uploads/2016/01/60c44b445e4764e2ff9139c438639d8a.jpg");
     this.res.end();
   }
   else if(request.text && botRegexHarper.test(request.text)) {
