@@ -92,7 +92,7 @@ function respond() {
   }
   else if(request.text && botRegexSalt.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://i.imgur.com/B5BSVqH.png");
+    postMessage("https://i.kym-cdn.com/photos/images/newsfeed/000/922/014/7e4.jpg");
     this.res.end();
   }
   else if(request.text && botRegexAd.test(request.text)) {
