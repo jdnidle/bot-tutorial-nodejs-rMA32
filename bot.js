@@ -27,6 +27,7 @@ function respond() {
     this.res.writeHead(200);
     postMessage("https://media.giphy.com/media/pQmWjYrz39YAg/giphy.gif");
     this.res.end();
+    
   }
   else if(request.text && botRegexFOS.test(request.text)) {
     this.res.writeHead(200);
