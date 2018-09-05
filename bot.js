@@ -133,17 +133,22 @@ function respond() {
   }
   else if(request.text && botRegexFake.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://i.groupme.com/320x180.gif.62f50471251049c798d5e38496411e67.large");
+    postMessage("https://media2.giphy.com/media/26n6ziTEeDDbowBkQ/giphy-downsized.gif");
     this.res.end();
   }
   else if(request.text && botRegexTears.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://i.groupme.com/400x279.gif.02394e1588ad47e09b88cc07fa954c2a.large");
+    postMessage("https://media1.tenor.com/images/0cf8b8b298edf6e0f297839451042dd6/tenor.gif?itemid=5412476");
     this.res.end();
   }
   else if(request.text && botRegexList.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://i.groupme.com/540x304.gif.e9d4c3fc5e24425b87ec33c82760284b.large");
+    postMessage("https://78.media.tumblr.com/09a6b930d188d946d1368357d962818b/tumblr_oto92e8YgQ1u1ljrzo1_500.gif");
+    this.res.end();
+  }
+  else if(request.text && botRegexRockSmell.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://media.giphy.com/media/l0HUg6Ypas42ubkXu/giphy.gif");
     this.res.end();
   }
   else {
