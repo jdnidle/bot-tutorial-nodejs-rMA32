@@ -10,7 +10,7 @@ function respond() {
       botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexAFL37 = /^\/afl37/; 
       botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; botRegexNapolean = /^\/dance/; 
       botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/; botRegexLucky = /^\/lucky/; 
-      botRegexMad = /^\/madbro/; botRegexPats = /^\/patslose/; botRegexFake = /^\/fake/;
+      botRegexMad = /^\/madbro/; botRegexPats = /^\/patslose/; botRegexFake = /^\/fake/; botRegexSuccess = /^\/success/;
       botRegexCheesy = /^\/austin/; botRegexWooo = /^\/wooo/; botRegexBringIt = /^\/bringit/; botRegexSmell = /^\/smell/;
       botRegexDaf = /^\/dafuq/; botRegexFOS = /^\/factoryofsadness/;
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
@@ -164,6 +164,11 @@ function respond() {
   else if(request.text && botRegexCommands.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://daddyleagues.com/afl37/forum/post/193605");
+    this.res.end();
+  }
+  else if(request.text && botRegexSuccess.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://swcoulombe.files.wordpress.com/2015/03/success-baby-funny-fist-455x270.jpg");
     this.res.end();
   }
   else {
