@@ -5,10 +5,10 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/; botRegexSalt = /^\/salty/;botRegexRules = /^\/rules/
+      botRegex = /^\/cool guy/; botRegexSalt = /^\/salty/; botRegexRules = /^\/rules/
       botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexAFL37 = /^\/afl37/; 
-      botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/;
+      botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; botRegexYou = /^\/youtube/;
       botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/;
       botRegexMad = /^\/madbro/; botRegexPats = /^\/patslose/;
       botRegexCheesy = /^\/austin/; botRegexWooo = /^\/wooo/;
@@ -57,7 +57,7 @@ function respond() {
     this.res.writeHead(200);
     postMessage("https://media.giphy.com/media/oGBw7OaVBei1W/giphy.gif");
     this.res.end();
-    }
+  }
   else if(request.text && botRegexWooo.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://media.giphy.com/media/FXo3Din7pWybK/giphy.gif");
@@ -97,10 +97,14 @@ function respond() {
     
     this.res.end();
   }
-
   else if(request.text && botRegexTw.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
+    this.res.end();
+  }
+  else if(request.text && botRegexYou.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.youtube.com/"+request.text.substring(8,request.text.length));
     this.res.end();
   }
   else if(request.text && botRegexSh.test(request.text)) {
@@ -128,7 +132,6 @@ function respond() {
     postMessage("(☞ﾟヮﾟ)☞");
     this.res.end();
   }
-  
   else if(request.text && botRegexSiege.test(request.text)) {
     this.res.writeHead(200);
     if(0.6 >= Math.random() > 0.3)
@@ -139,7 +142,6 @@ function respond() {
       postMessage(siege2);
     this.res.end();
   }
-  
   else {
     console.log("don't care");
     this.res.writeHead(200);
