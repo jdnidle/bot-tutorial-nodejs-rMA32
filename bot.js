@@ -5,8 +5,8 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/; botRegexSalt = /^\/salty/; botRegexRules = /^\/rules/
-      botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i;
+      botRegex = /^\/cool guy/; botRegexSalt = /^\/salty/; botRegexRules = /^\/rules/; botRegexList = /^\/list/;
+      botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botRegexTears = /^\/tears/;
       botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexAFL37 = /^\/afl37/; 
       botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; botRegexNapolean = /^\/dance/; 
       botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/; botRegexLucky = /^\/lucky/; 
@@ -113,7 +113,7 @@ function respond() {
   }
   else if(request.text && botRegexWooo.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://media.giphy.com/media/FXo3Din7pWybK/giphy.gif");
+    postMessage("https://i.groupme.com/350x264.gif.27e202e47fb04d41b77d471f0ea38237.large");
     this.res.end();
   } 
   else if(request.text && botRegexFOS.test(request.text)) {
@@ -134,6 +134,16 @@ function respond() {
   else if(request.text && botRegexFake.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://i.groupme.com/320x180.gif.62f50471251049c798d5e38496411e67.large");
+    this.res.end();
+  }
+  else if(request.text && botRegexTears.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://i.groupme.com/400x279.gif.02394e1588ad47e09b88cc07fa954c2a.large");
+    this.res.end();
+  }
+  else if(request.text && botRegexList.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://i.groupme.com/540x304.gif.e9d4c3fc5e24425b87ec33c82760284b.large");
     this.res.end();
   }
   else {
