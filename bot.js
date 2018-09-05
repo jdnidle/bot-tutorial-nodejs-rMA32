@@ -10,7 +10,7 @@ function respond() {
       botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexAFL37 = /^\/afl37/; 
       botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; botRegexNapolean = /^\/dance/; 
       botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/; botRegexLucky = /^\/lucky/; 
-      botRegexMad = /^\/madbro/; botRegexPats = /^\/patslose/;
+      botRegexMad = /^\/madbro/; botRegexPats = /^\/patslose/; botRegexFake = /^\/fake/;
       botRegexCheesy = /^\/austin/; botRegexWooo = /^\/wooo/;
       botRegexDaf = /^\/dafuq/; botRegexFOS = /^\/factoryofsadness/;
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
@@ -129,6 +129,11 @@ function respond() {
   else if(request.text && botRegexLucky.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://i.pinimg.com/originals/6d/2c/c4/6d2cc4b04f3723f2ee89038d000939a5.jpg");
+    this.res.end();
+  }
+  else if(request.text && botRegexFake.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://i.groupme.com/320x180.gif.62f50471251049c798d5e38496411e67.large");
     this.res.end();
   }
   else {
