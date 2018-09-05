@@ -60,7 +60,7 @@ function respond() {
     }
   else if(request.text && botRegexWooo.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://i.imgur.com/42haLq8.gif?noredirect");
+    postMessage("https://media.giphy.com/media/FXo3Din7pWybK/giphy.gif");
     this.res.end();
   }  
   else if(request.text && botRegexCoaches.test(request.text)) {
