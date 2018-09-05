@@ -8,7 +8,7 @@ function respond() {
       botRegex = /^\/cool guy/; botRegexSalt = /^\/salty/; botRegexRules = /^\/rules/
       botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i;
       botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexAFL37 = /^\/afl37/; 
-      botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; 
+      botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; botRegexNapolean = /^\/dance/; 
       botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/; 
       botRegexMad = /^\/madbro/; botRegexPats = /^\/patslose/;
       botRegexCheesy = /^\/austin/; botRegexWooo = /^\/wooo/;
@@ -119,6 +119,11 @@ function respond() {
   else if(request.text && botRegexFOS.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://www.youtube.com/watch?v=tRBDMMVctu8");
+    this.res.end();
+  }
+  else if(request.text && botRegexNapolean.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://media.giphy.com/media/Cf6KmzYYJAg8w/giphy.gif");
     this.res.end();
   }
   else {
