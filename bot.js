@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/; botRegexSalt = /^\/salty/; botRegexRules = /^\/rules/
-      botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
+      botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i;
       botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexAFL37 = /^\/afl37/; 
       botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; 
       botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/; 
@@ -23,57 +23,11 @@ function respond() {
     postMessage(cool());
     this.res.end();
   }
-  else if(request.text && botRegexBurn.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://media.giphy.com/media/pQmWjYrz39YAg/giphy.gif");
-    this.res.end();
-    
-  }
-  else if(request.text && botRegexFOS.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://www.youtube.com/watch?v=tRBDMMVctu8");
-    this.res.end();
-  }
-  else if(request.text && botRegexWamb.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://i.kym-cdn.com/entries/icons/mobile/000/000/894/wahmbulance.jpg");
-    this.res.end();
-  }
-  else if(request.text && botRegexMad.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://media.giphy.com/media/xTcnSOEKegBnYhGahW/giphy.gif");
-    this.res.end();
-  }
-  else if(request.text && botRegexDaf.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://i3.kym-cdn.com/photos/images/facebook/000/787/356/d6f.jpg");
-    this.res.end();
-  }
-  else if(request.text && botRegexPats.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://cdn.totalfratmove.com/wp-content/uploads/2016/01/60c44b445e4764e2ff9139c438639d8a.jpg");
-    this.res.end();
-  }
-  else if(request.text && botRegexCheesy.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://media.giphy.com/media/oGBw7OaVBei1W/giphy.gif");
-    this.res.end();
-  }
-  else if(request.text && botRegexWooo.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://media.giphy.com/media/FXo3Din7pWybK/giphy.gif");
-    this.res.end();
-  }  
-  else if(request.text && botRegexCoaches.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://daddyleagues.com/AFL37/coaches");
-    this.res.end();
-  }
   else if(request.text && botRegexSalt.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://i.kym-cdn.com/photos/images/newsfeed/000/922/014/7e4.jpg");
     this.res.end();
-  }
+  } 
   else if(request.text && botRegexRules.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://www.daddyleagues.com/AFL37/rules");
@@ -86,7 +40,6 @@ function respond() {
   }
   else if(request.text && botRegexSCH.test(request.text)) {
     this.res.writeHead(200);
-    
     postMessage("http://daddyleagues.com/AFL37/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
@@ -113,21 +66,6 @@ function respond() {
     postMessage("https://docs.google.com/spreadsheets/d/1eZEMY4qLq_JUPgnuE9YtKMD3hVHwl7EqjxByYDLBf6I/edit?usp=sharing");
     this.res.end();
   }
-  else if(request.text && botODB.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("OBJ*");
-    this.res.end();
-  }
-  else if(request.text && botDuck.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://i.gifer.com/uTE.gif");
-    this.res.end();
-  }
-  else if(request.text && botRegexCC.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("(☞ﾟヮﾟ)☞");
-    this.res.end();
-  }
   else if(request.text && botRegexSiege.test(request.text)) {
     this.res.writeHead(200);
     if(0.6 >= Math.random() > 0.3)
@@ -136,6 +74,51 @@ function respond() {
       postMessage(siege3)
     else
       postMessage(siege2);
+    this.res.end();
+  }  
+  else if(request.text && botRegexCoaches.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://daddyleagues.com/AFL37/coaches");
+    this.res.end();
+  }
+  else if(request.text && botRegexBurn.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://media.giphy.com/media/pQmWjYrz39YAg/giphy.gif");
+    this.res.end();
+  }
+  else if(request.text && botRegexWamb.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://i.kym-cdn.com/entries/icons/mobile/000/000/894/wahmbulance.jpg");
+    this.res.end();
+  }
+  else if(request.text && botRegexMad.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://media.giphy.com/media/xTcnSOEKegBnYhGahW/giphy.gif");
+    this.res.end();
+  }
+  else if(request.text && botRegexPats.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://cdn.totalfratmove.com/wp-content/uploads/2016/01/60c44b445e4764e2ff9139c438639d8a.jpg");
+    this.res.end();
+  }
+  else if(request.text && botRegexCheesy.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://media.giphy.com/media/oGBw7OaVBei1W/giphy.gif");
+    this.res.end();
+  }
+  else if(request.text && botRegexDaf.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://i3.kym-cdn.com/photos/images/facebook/000/787/356/d6f.jpg");
+    this.res.end();
+  }
+  else if(request.text && botRegexWooo.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://media.giphy.com/media/FXo3Din7pWybK/giphy.gif");
+    this.res.end();
+  } 
+  else if(request.text && botRegexFOS.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://www.youtube.com/watch?v=tRBDMMVctu8");
     this.res.end();
   }
   else {
