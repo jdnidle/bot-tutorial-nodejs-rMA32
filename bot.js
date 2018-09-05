@@ -8,8 +8,8 @@ function respond() {
       botRegex = /^\/cool guy/; botRegexSalt = /^\/salty/; botRegexRules = /^\/rules/
       botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexAFL37 = /^\/afl37/; 
-      botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; botRegexYou = /^\/youtube/i;
-      botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/; botRegexYoutest = /^\/youtubetest/i;
+      botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; 
+      botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/; 
       botRegexMad = /^\/madbro/; botRegexPats = /^\/patslose/;
       botRegexCheesy = /^\/austin/; botRegexWooo = /^\/wooo/;
       botRegexDaf = /^\/dafuq/; botRegexFOS = /^\/factoryofsadness/;
@@ -101,16 +101,6 @@ function respond() {
   else if(request.text && botRegexTw.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
-    this.res.end();
-  }
-  else if(request.text && botRegexYou.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://www.youtube.com/user/"+request.text.substring(8,request.text.length));
-    this.res.end();
-    }
-  else if(request.text && botRegexYoutest.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://www.youtube.com/user/"request.text.substring(8,request.text.length));
     this.res.end();
   }
   else if(request.text && botRegexSh.test(request.text)) {
