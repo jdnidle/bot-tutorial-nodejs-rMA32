@@ -9,7 +9,7 @@ function respond() {
       botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botRegexTears = /^\/tears/; botRegexBrow = /^\/brow/;
       botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexAFL37 = /^\/afl37/; 
       botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; botRegexNapolean = /^\/dance/; botRegexNotAmused = /^\/notamused/;
-      botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/; botRegexLucky = /^\/lucky/; 
+      botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/; botRegexLucky = /^\/lucky/; botRegexWhipped = /^\/whipped/; 
       botRegexMad = /^\/madbro/; botRegexPats = /^\/patslose/; botRegexFake = /^\/fake/; botRegexSuccess = /^\/success/;
       botRegexCheesy = /^\/austin/; botRegexWooo = /^\/wooo/; botRegexBringIt = /^\/bringit/; botRegexSmell = /^\/smell/;
       botRegexDaf = /^\/dafuq/; botRegexFOS = /^\/factoryofsadness/;
@@ -174,6 +174,11 @@ function respond() {
   else if(request.text && botRegexNotAmused.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://media0.giphy.com/media/9QvuoiiT6SBtm/giphy.gif?cid=a058f94b5b90217f6a49703736940e28");
+    this.res.end();
+  }
+  else if(request.text && botRegexWhipped.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://media.giphy.com/media/3oz8xPYW0sc64eJEEU/giphy.gif");
     this.res.end();
   }
   else {
