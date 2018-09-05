@@ -8,7 +8,7 @@ function respond() {
       botRegex = /^\/cool guy/; botRegexSalt = /^\/salty/; botRegexRules = /^\/rules/; botRegexList = /^\/list/; botRegexCommands = /^\/commands/;
       botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botRegexTears = /^\/tears/; botRegexBrow = /^\/brow/;
       botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexAFL37 = /^\/afl37/; 
-      botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; botRegexNapolean = /^\/dance/; 
+      botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; botRegexNapolean = /^\/dance/; botRegexNotAmused = /^\/notamused/;
       botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/; botRegexLucky = /^\/lucky/; 
       botRegexMad = /^\/madbro/; botRegexPats = /^\/patslose/; botRegexFake = /^\/fake/; botRegexSuccess = /^\/success/;
       botRegexCheesy = /^\/austin/; botRegexWooo = /^\/wooo/; botRegexBringIt = /^\/bringit/; botRegexSmell = /^\/smell/;
@@ -169,6 +169,11 @@ function respond() {
   else if(request.text && botRegexSuccess.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://swcoulombe.files.wordpress.com/2015/03/success-baby-funny-fist-455x270.jpg");
+    this.res.end();
+  }
+  else if(request.text && botRegexNotAmused.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://media0.giphy.com/media/9QvuoiiT6SBtm/giphy.gif?cid=a058f94b5b90217f6a49703736940e28");
     this.res.end();
   }
   else {
