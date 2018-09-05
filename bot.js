@@ -9,7 +9,7 @@ function respond() {
       botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i;
       botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexAFL37 = /^\/afl37/; 
       botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; botRegexNapolean = /^\/dance/; 
-      botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/; 
+      botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/; botRegexLucky = /^\/lucky/; 
       botRegexMad = /^\/madbro/; botRegexPats = /^\/patslose/;
       botRegexCheesy = /^\/austin/; botRegexWooo = /^\/wooo/;
       botRegexDaf = /^\/dafuq/; botRegexFOS = /^\/factoryofsadness/;
@@ -124,6 +124,11 @@ function respond() {
   else if(request.text && botRegexNapolean.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://media.giphy.com/media/Cf6KmzYYJAg8w/giphy.gif");
+    this.res.end();
+  }
+  else if(request.text && botRegexLucky.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://i.pinimg.com/originals/6d/2c/c4/6d2cc4b04f3723f2ee89038d000939a5.jpg");
     this.res.end();
   }
   else {
