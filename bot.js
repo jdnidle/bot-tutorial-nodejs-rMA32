@@ -11,7 +11,7 @@ function respond() {
       botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; botRegexNapolean = /^\/dance/; 
       botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/; botRegexLucky = /^\/lucky/; 
       botRegexMad = /^\/madbro/; botRegexPats = /^\/patslose/; botRegexFake = /^\/fake/;
-      botRegexCheesy = /^\/austin/; botRegexWooo = /^\/wooo/; botRegexBringIt = /^\/bringit/; botRegexRockSmell = /^\/rocksmell/;
+      botRegexCheesy = /^\/austin/; botRegexWooo = /^\/wooo/; botRegexBringIt = /^\/bringit/; botRegexSmell = /^\/smell/;
       botRegexDaf = /^\/dafuq/; botRegexFOS = /^\/factoryofsadness/;
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
       siege3 = 'https://i.groupme.com/960x960.png.006e180e05d841c6a2962e844bf1e6fd';
@@ -146,7 +146,7 @@ function respond() {
     postMessage("https://78.media.tumblr.com/09a6b930d188d946d1368357d962818b/tumblr_oto92e8YgQ1u1ljrzo1_500.gif");
     this.res.end();
   }
-  else if(request.text && botRegexRockSmell.test(request.text)) {
+  else if(request.text && botRegexSmell.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://media.giphy.com/media/l0HUg6Ypas42ubkXu/giphy.gif");
     this.res.end();
