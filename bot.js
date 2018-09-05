@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/; botRegexSalt = /^\/salty/; botRegexRules = /^\/rules/; botRegexList = /^\/list/;
+      botRegex = /^\/cool guy/; botRegexSalt = /^\/salty/; botRegexRules = /^\/rules/; botRegexList = /^\/list/; botRegexCommands = /^\/command/;
       botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botRegexTears = /^\/tears/; botRegexBrow = /^\/brow/;
       botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexAFL37 = /^\/afl37/; 
       botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; botRegexNapolean = /^\/dance/; 
@@ -159,6 +159,11 @@ function respond() {
   else if(request.text && botRegexBrow.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://media.giphy.com/media/6Dj7ZWBERpGU0/giphy.gif");
+    this.res.end();
+  }
+  else if(request.text && botRegexCommands.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://daddyleagues.com/afl37/forum/post/193605");
     this.res.end();
   }
   else {
