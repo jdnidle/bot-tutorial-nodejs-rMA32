@@ -7,7 +7,7 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/; botRegexSalt = /^\/salty/; botRegexRules = /^\/rules/; botRegexList = /^\/list/; botRegexCommands = /^\/commands/;
       botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botRegexTears = /^\/tears/; botRegexBrow = /^\/brow/; botRegexDLMain = /^\/dl/;
-      botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexAFL37 = /^\/afl37/; 
+      botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexAFL37 = /^\/afl37/; botRegexPlayoffs = /^\/playoffs/;
       botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; botRegexNapolean = /^\/dance/; botRegexNotAmused = /^\/notamused/;
       botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/; botRegexLucky = /^\/lucky/; botRegexWhipped = /^\/whipped/; 
       botRegexMad = /^\/madbro/; botRegexPats = /^\/patslose/; botRegexFake = /^\/fake/; botRegexSuccess = /^\/success/;
@@ -186,6 +186,11 @@ function respond() {
     postMessage("https://daddyleagues.com/afl37");
     this.res.end();
   }
+  else if(request.text && botRegexPlayoffs.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://media1.tenor.com/images/e2f29a1e7ee3d9623cb37d0db33b318c/tenor.gif?itemid=4782912");
+    this.res.end();
+  }  
   else {
     console.log("don't care");
     this.res.writeHead(200);
