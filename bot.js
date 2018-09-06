@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/; botRegexSalt = /^\/salty/; botRegexRules = /^\/rules/; botRegexList = /^\/list/; botRegexCommands = /^\/commands/;
-      botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botRegexTears = /^\/tears/; botRegexBrow = /^\/brow/;
+      botRegexTrades = /^\/trades/; botRegexSCH = /^\/sch/i; botRegexTears = /^\/tears/; botRegexBrow = /^\/brow/; botRegexDLMain = /^\/dl/;
       botRegexP = /^\/pdl/i; botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexAFL37 = /^\/afl37/; 
       botRegexSiege = /^\/siege/; botRegexCoaches = /^\/coaches/; botRegexNapolean = /^\/dance/; botRegexNotAmused = /^\/notamused/;
       botRegexBurn = /^\/burn/; botRegexWamb = /^\/wambulance/; botRegexLucky = /^\/lucky/; botRegexWhipped = /^\/whipped/; 
@@ -179,6 +179,11 @@ function respond() {
   else if(request.text && botRegexWhipped.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://media.giphy.com/media/3oz8xPYW0sc64eJEEU/giphy.gif");
+    this.res.end();
+  }
+  else if(request.text && botRegexDLMain.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://daddyleagues.com/afl37");
     this.res.end();
   }
   else {
