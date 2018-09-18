@@ -13,6 +13,7 @@ function respond() {
       botRegexMad = /^\/madbro/; botRegexPats = /^\/patslose/; botRegexFake = /^\/fake/; botRegexSuccess = /^\/success/;
       botRegexCheesy = /^\/austin/; botRegexWooo = /^\/wooo/; botRegexBringIt = /^\/bringit/; botRegexSmell = /^\/smell/;
       botRegexDaf = /^\/dafuq/; botRegexFOS = /^\/factoryofsadness/; botRegexPractice = /^\/practice/;
+      botRegexPlaytowin = /^\/playtowin/;
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
       siege3 = 'https://i.groupme.com/960x960.png.006e180e05d841c6a2962e844bf1e6fd';
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -174,6 +175,11 @@ function respond() {
   else if(request.text && botRegexNotAmused.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://media0.giphy.com/media/9QvuoiiT6SBtm/giphy.gif?cid=a058f94b5b90217f6a49703736940e28");
+    this.res.end();
+  }
+  else if(request.text && botRegexPlaytowin.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://i.groupme.com/480x351.gif.84ee785b715946ef9d5b2b06cc621102.large");
     this.res.end();
   }
   else if(request.text && botRegexPractice.test(request.text)) {
